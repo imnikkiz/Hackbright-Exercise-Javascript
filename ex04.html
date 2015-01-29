@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+var cat = {
+        tiredness: 20,
+        hunger: 20,
+        loneliness: 3,
+        happiness: 15,
+        obedience: -5000,
+        feed: function () {
+            console.log("Om nom nom");
+            this.hunger = this.hunger - 5;
+        },
+        sleep: function () {
+            console.log("Zzzzzzzzzz");
+            this.tiredness = this.tiredness - 5;
+        },
+        hug: function () {
+            console.log("Purr purr purr");
+            this.loneliness = this.loneliness - 2;
+            this.happiness = this.happiness + 10;
+        },
+        spray: function () {
+            console.log("Kssssssssssss");
+            this.obedience = this.obedience + 1000;
+        },
+        status: function () {
+            console.log("Tiredness = " + this.tiredness);
+            console.log("Hunger = " + this.hunger);
+            console.log("Loneliness = " + this.loneliness);
+            console.log("Happiness = " + this.happiness);
+            console.log("Obedience = " + this.obedience);            
+        }
+}; 
+
+
+console.log(cat.status());
+console.log(cat.sleep());
+console.log(cat.status());
+
+
+
+
+</script>
+</body>
+</html>
