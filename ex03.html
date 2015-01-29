@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+</head>
+
+<body>
 <script>
 
 function duplicates(anArray) {
+
     var duplicatesArray = [];
+
     for (var i=0; i<anArray.length; i++) {
-        for (var j=(i+1);  j< (anArray.length-(i + 1)); j++) {
+        for (var j=(i+1);  j< (anArray.length); j++) {
             if (anArray[i] === anArray[j]) {
-                // console.log("before push:", duplicatesArray);
                 duplicatesArray.push(anArray[i]);
-                // console.log("after push:", duplicatesArray);
             }
         }
     }
+
     for (var i=0; i<duplicatesArray.length; i++) {
-        for (var j=(i+1);  j< (duplicatesArray.length-(i + 1)); j++) {
+        for (var j=(i+1);  j< duplicatesArray.length; j++) {
             if (duplicatesArray[i] === duplicatesArray[j]) {
-                duplicatesArray.splice(j,1);
+                var anotherArray = duplicatesArray.splice(j,1);
+                j = j - 1;
             }
         }
-    }   
+    } 
+    
     return duplicatesArray;
 }
 
-
-
-
-
-
-
 var votesToGoEatCake = [true, true, true, true]
-
-var hackbrightStudents = ["katie", "sara", "kelley", "amy", "jenny", "jenny", "katie", "kelley", "katie", "amy", "nicole", "katie"]
-
+var hackbrightStudents = ["katie", "amy", "jenny", "katie", "kelley", "katie", "amy"]
 var classroomIds = ["47","12", "19", "22", "26", "99", "30", "50", "324", "003", "44",
     "33", "346", "354", "44", "235", "45", "34", "44", "590", "09", "099", "0", "1", "3", 
     "33", "999", "9"]
-
 var randomJunkIFound = ["katie", "true", true, 19, "gargoyles", "!", 2 + 3, "2 + 3", 
     19, "19", 19 === "19", 6, false, false]
 
@@ -47,47 +44,5 @@ console.log(duplicates(classroomIds));
 console.log(duplicates(randomJunkIFound));
 
 </script>
-</head>
-
-
-<body>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-// function duplicates(anArray) {
-//     var duplicatesObject = {};
-//     var duplicatesArray = [];
-
-//     for (var i=0; i < anArray.length; i++) {
-//         duplicatesObject[anArray[i]] = (duplicatesObject[anArray[i]] || 0) + 1;
-//     }
-//     for (var k in duplicatesObject) {
-//         if (duplicatesObject[k] > 1) {
-//             duplicatesArray.push(k);
-//         }
-//     }
-//     return duplicatesArray;
-// }</script>
